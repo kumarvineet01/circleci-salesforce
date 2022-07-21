@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node
     steps:
       - checkout
       - run:
@@ -16,7 +16,6 @@ jobs:
           command: . build/test.sh
       - store_test_results:
           path: test-results
-          
   deploy-prod:
     docker:
     - image: circleci/node:latest
@@ -25,6 +24,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: . build/install.sh
+      - run:
+          name: Login to Production
+          command: . build/setup-prod.sh
       - run:
           name: Deploy to Production
           command: . build/deploy-prod.sh
