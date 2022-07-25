@@ -1,6 +1,6 @@
 {
-    "orgName": "IT",
-    "edition": "Developer",
+    "orgName": "CircleCi",
+    "edition": "CircleCi",
     "orgPreferences" : {
         "enabled": ["S1DesktopEnabled"]
     }
